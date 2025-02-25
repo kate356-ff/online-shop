@@ -4,6 +4,9 @@ $h1-bg: adjust-color(green, $hue: 90deg);
 $main-color: black;
 $main-bg: rgb(244, 244, 255);
 
+// $bg: adjust-color($bg-btn);
+// $text: adjust-color($color-btn);
+
 
 
 h1 {
@@ -332,6 +335,7 @@ $radius-btn: 3px;
     border-radius: $radius-btn;
     padding-left: $font-size-btn*0.5;
     padding-right: $font-size-btn*0.5;
+    width: 150px;
 }
 
 
@@ -345,35 +349,67 @@ $radius-btn: 3px;
 }
 
 .auth {
-    max-width: 200px;
+    max-width: 290px;
     background-color: adjust-color($bg-btn, $lightness:40%);
     padding: 20px;
 
     &__value {
         border-radius: $radius-btn;
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        padding: 10px;
     }
 
     &__btn {
         border: none;
         transition: all 0.3s;
+        width: 250px;
+        height: 40px;
+        border-radius: 5px;
+        transition: transform 0.2s ease;
 
-        &--login {
-            color: $color-btn;
-            background: $bg-btn;
+        input {
+            border-radius: $radius-btn;
+            border: none;
+            @include set-size($font-size-btn)
         }
-
+        
+        &--login {
+            @include set-colors();
+            &:hover {
+                background: lighten($bg-btn, 30%);
+            }
+        }
         &--reg {
-            color: adjust-color($bg-btn, $lightness:20%);
-            background: adjust-color($bg-btn, $blackness:20%);
+            @include set-colors(lighten($bg-btn, 50%), darken($bg-btn, 10%));
+            &:hover {
+                background: lighten(($bg-btn, 30%));
+            }
         }
     }
     div {
         padding-top: 10px;
+
+        &:first-child {
+            padding-top: 0px;
+        }
     }
 
-    div:first-child {
-        padding-top: 0px;
-    }
+    
+}
+
+
+
+
+@mixin set-size($font-size:16px) {
+    font-size: $font-size;
+    padding: $font-size*0.5 $font-size*0.3;
+}
+
+@mixin set-colors($bg: $bg-btn, $text: $color-btn){
+    background-color: $bg;
+    color: $text;
 }
 
 

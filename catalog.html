@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Каталог товаров</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="scss/style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Каталог товаров</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="css/normalize.css">
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/style.css">
+    
+        <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script defer src="js/swiper.js"></script>
+        <script defer src="js/aos.js"></script>
+    
+    </head>
 <body>
     <header>
         <h1>Интернет-магазин</h1>
@@ -25,7 +35,20 @@
 
                     <div class="catalog__card">
                         <div class="img__wrapper">
-                        <img class="catalog__img" src="img/catalogimage.webp" alt="">
+                             <!-- Slider main container -->
+<div class="swiper swiper-card">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img class="catalog__img" src="img/catalogimage.webp" alt=""></div>
+      <div class="swiper-slide"><img class="catalog__img" src="img/catalogimage.webp" alt=""></div>
+      <div class="swiper-slide"><img class="catalog__img" src="img/catalogimage.webp" alt=""></div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+  </div>
+                        <!-- <img class="catalog__img" src="img/catalogimage.webp" alt=""> -->
                         <i class="fav-btn bi bi-heart-fill"></i>
                         <div class="catalog__promotions">
                             <div class="sales">
